@@ -1,3 +1,6 @@
+/* Script for the bullets shooting by space ship. 
+The bullet is destroying after collision with object tagged as "Obstacle" */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
