@@ -1,3 +1,5 @@
+// Script for moving background. 
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
