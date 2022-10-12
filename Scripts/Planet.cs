@@ -1,3 +1,8 @@
+/* Script for the planets. 
+Planets are obstacles, they are moving from the right to the left side of scene. 
+The value of damage from hitting the palnet is 50 point. Planet will burst after collision. 
+Player cannot shoot planet with the bullet. */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
