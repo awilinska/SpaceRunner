@@ -1,3 +1,5 @@
+// Script used in Menu scene. Functions for loading game scene and closing application.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
