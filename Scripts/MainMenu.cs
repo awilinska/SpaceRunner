@@ -1,4 +1,4 @@
-// Script used in Menu scene. Functions for loading game scene and closing application.
+// Script used in Menu scene.
 
 using System.Collections;
 using System.Collections.Generic;
@@ -8,11 +8,11 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public void StartGame() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Moving to the next scene (starting game)
     }
 
     public void QuitGame() {
         Debug.Log("QUIT");
-        Application.Quit();
+        Application.Quit(); // Closing application
     }
 }
