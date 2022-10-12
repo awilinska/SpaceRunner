@@ -12,9 +12,9 @@ public class Player : MonoBehaviour
     public float speed;
 
     public float lowerLimit;
-    public float upperLimit;
+    public float upperLimit; // Up and down movement limits
 
-    public float armor = 100;
+    public float armor = 100; // Total armor 
     public Text armorDisplay;
 
     public GameObject burst;
@@ -23,21 +23,21 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        armorDisplay.text = ("Armor: " + armor.ToString());
+        armorDisplay.text = ("Armor: " + armor.ToString()); // Displaying armor value on screen
 
-        if (armor <= 0) {
-            Instantiate(burst, transform.position, Quaternion.identity);
-            gameOver.SetActive(true);
-            Destroy(gameObject);
+        if (armor <= 0) { // If armor is 0 or lower:
+            Instantiate(burst, transform.position, Quaternion.identity); // burst space ship
+            gameOver.SetActive(true); // displaying game over canvas
+            Destroy(gameObject); 
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, movement, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, movement, speed * Time.deltaTime); // Horizontal movement
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < upperLimit) {
-            movement = new Vector2(transform.position.x, transform.position.y + moveValueY);
+            movement = new Vector2(transform.position.x, transform.position.y + moveValueY); // Moving up 
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > lowerLimit) {
-            movement = new Vector2(transform.position.x, transform.position.y - moveValueY);
+            movement = new Vector2(transform.position.x, transform.position.y - moveValueY); // Moving down
         }
         
     }
