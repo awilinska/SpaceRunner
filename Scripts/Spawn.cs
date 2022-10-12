@@ -1,3 +1,5 @@
+// Script for spawning one obstacle object.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +10,7 @@ public class Spawn : MonoBehaviour
 
     void Start()
     {
-        Instantiate(obstacle, transform.position, Quaternion.identity);
+        Instantiate(obstacle, transform.position, Quaternion.identity); // Spawning obstacle
     }
 
 }
