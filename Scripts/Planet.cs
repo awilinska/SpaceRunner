@@ -1,7 +1,4 @@
-/* Script for the planets. 
-Planets are obstacles, they are moving from the right to the left side of scene. 
-The value of damage from hitting the palnet is 50 point. Planet will burst after collision. 
-Player cannot shoot planet with the bullet. */
+// Script for the planets. 
 
 using System.Collections;
 using System.Collections.Generic;
@@ -10,22 +7,22 @@ using UnityEngine;
 public class Planet : MonoBehaviour
 {
 
-    public float planetDamage = 50;
-    public float speed;
+    public float planetDamage = 50; // Damage from hitting planet
+    public float speed; 
     public GameObject burst;
     public GameObject burstSound;
 
     private void Update() {
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
+        transform.Translate(Vector2.left * speed * Time.deltaTime); // Moving
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Player")) {
-            Instantiate(burstSound, transform.position, Quaternion.identity);
-            Instantiate(burst, transform.position, Quaternion.identity);
-            other.GetComponent<Player>().armor -= planetDamage;
+        if (other.CompareTag("Player")) { // When the planet hits object with tag "Player":
+            Instantiate(burstSound, transform.position, Quaternion.identity); // burst sound
+            Instantiate(burst, transform.position, Quaternion.identity); // burst animation
+            other.GetComponent<Player>().armor -= planetDamage; // damaging player
             Debug.Log(other.GetComponent<Player>().armor);
-            Destroy(gameObject);
+            Destroy(gameObject); // destroying planet object
         }
     }
 }
