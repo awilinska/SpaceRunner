@@ -1,3 +1,5 @@
+// Script for objects spawner.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,10 +16,10 @@ public class Spawner : MonoBehaviour
     private void Update()
     {
         if (spawnTime <= 0) {
-            int rand = Random.Range(0, patterns.Length);
-            Instantiate(patterns[rand], transform.position, Quaternion.identity);
+            int rand = Random.Range(0, patterns.Length); // Adding patterns
+            Instantiate(patterns[rand], transform.position, Quaternion.identity); // Spawning patterns of obstacles
             spawnTime = startSpawnTime;
-            if (startSpawnTime > maxSpeed) {
+            if (startSpawnTime > maxSpeed) { // Decreasing time between spawning objects
                 startSpawnTime -= speedUp;
             }
         }
